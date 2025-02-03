@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "287437248833",
+    "project_id": "taoapp2-3d5a6",
+    "storage_bucket": "taoapp2-3d5a6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287437248833:android:05065f7b659f4099ca29c0",
+        "android_client_info": {
+          "package_name": "com.example.tao"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3gw9RKGAnY5k-B5JS7Ve75l-McGksmrA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:287437248833:android:e9a3ceeb36e90bfaca29c0",
+        "android_client_info": {
+          "package_name": "com.example.taoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3gw9RKGAnY5k-B5JS7Ve75l-McGksmrA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
