@@ -4,6 +4,12 @@
     <color name="grey_dark">#424242</color>
     <color name="grey_mid">#8C8C8C</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="yellow_lime">#9ABF44</color>
+    <color name="green_lime">#58A238</color>
+    <color name="green_light">#26996F</color>
+    <color name="green_mid">#1c614b</color>
+    <color name="green_dark">#124736</color>
+    <color name="red_pale">#A85555</color>
     <color name="filled_star_color">#FFD700</color> <!-- Gold color for filled stars -->
-    <color name="unfilled_star_color">#D3D3D3</color> <!-- Light gray color for unfilled stars -->
+    <color name="unfilled_star_color">#324040</color> <!-- Light gray color for unfilled stars -->
 </resources>

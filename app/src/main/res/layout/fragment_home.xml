@@ -4,39 +4,68 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="16dp"
-    android:background="#004d40">
+    android:background="@drawable/tao_background">
 
-    <Button
-        android:id="@+id/cube1"
-        android:layout_width="250dp"
-        android:layout_height="150dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/gradiant_background_green"
+        android:padding="10dp"
+        android:layout_gravity="bottom"
+        android:elevation="20dp">
 
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#76FF03"
-        android:text="ა"
-        android:textColor="#000"
-        android:textSize="48sp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_owl"/>
 
-    <Button
-        android:id="@+id/cube3"
-        android:layout_width="250dp"
-        android:layout_height="150dp"
-        android:backgroundTint="#FFEB3B"
-        android:layout_marginBottom="16sp"
-        android:text="ⴀ"
-        android:textColor="#000"
-        android:textSize="48sp" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/cube2"
-        android:layout_width="250dp"
-        android:layout_height="150dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="#76FF03"
-        android:text="Ⴀ"
-        android:textColor="#000"
-        android:textSize="48sp" />
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="15dp"
+            android:background="@drawable/tao_background">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cube1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:padding="15dp"
+                android:background="@drawable/rounded_corners2"
+                android:text=" მხედრული\n(ა, ბ, გ, დ)"
+                android:textColor="@color/green_dark"
+                android:textSize="35sp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cube2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:padding="15dp"
+                android:background="@drawable/rounded_corners2"
+                android:backgroundTint="@color/green_lime"
+                android:text=" ᲜᲣᲡᲮᲣᲠᲘ\n(ⴀ, ⴁ, ⴂ, ⴃ)"
+                android:textColor="@color/green_dark"
+                android:textSize="35sp"
+                android:textAllCaps="false"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cube3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:padding="15dp"
+                android:background="@drawable/rounded_corners2"
+                android:backgroundTint="@color/yellow_lime"
+                android:text=" ასომთავრული\n(Ⴀ, Ⴁ, Ⴂ, Ⴃ)"
+                android:textColor="@color/green_dark"
+                android:textSize="35sp" />
+
+        </LinearLayout>
 
 </LinearLayout>

@@ -38,7 +38,7 @@ class Home : Fragment() {
         val cube3 = view.findViewById<Button>(R.id.cube3)
 
         // Set click listeners for buttons
-        val message = "გაკვეთილი მალე დაემატება"
+        val message = "გაკვეთილები მალე დაემატება"
         cube1.setOnClickListener {
             Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
         }

@@ -11,15 +11,12 @@ import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginFragment : Fragment() {
-
     private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
         auth = FirebaseAuth.getInstance()
-
         val view = inflater.inflate(R.layout.fragment_log_in, container, false)
 
         val emailEditText = view.findViewById<EditText>(R.id.emailEditText)
@@ -32,32 +29,22 @@ class LoginFragment : Fragment() {
             val password = passwordEditText.text.toString().trim()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
-                auth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            // Successful login
-                            Toast.makeText(context, "Login successful", Toast.LENGTH_SHORT).show()
-                            (activity as MainActivity).replaceFragment(Home())
-                        } else {
-                            // Login failed
-                            Toast.makeText(context, "Login failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
-                        }
+                auth.signInWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(context, "Login successful", Toast.LENGTH_SHORT).show()
+                        (activity as MainActivity).replaceFragment(Home())
+                    } else {
+                        Toast.makeText(context, "Login failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                     }
+                }
             } else {
                 Toast.makeText(context, "Please enter your email and password", Toast.LENGTH_SHORT).show()
             }
         }
 
-        // Go to SignUp
         goToSignUpButton.setOnClickListener {
             (activity as MainActivity).replaceFragment(SignUpFragment())
         }
-
         return view
-    }
-
-    companion object {
-        @JvmStatic
-        fun newInstance() = LoginFragment()
     }
 }

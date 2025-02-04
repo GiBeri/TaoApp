@@ -11,15 +11,12 @@ import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 
 class SignUpFragment : Fragment() {
-
     private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    ): View {
         auth = FirebaseAuth.getInstance()
-
         val view = inflater.inflate(R.layout.fragment_sign_up, container, false)
 
         val usernameEditText = view.findViewById<EditText>(R.id.usernameEditText)
@@ -29,37 +26,26 @@ class SignUpFragment : Fragment() {
         val goToLoginButton = view.findViewById<Button>(R.id.goToLoginButton)
 
         registerButton.setOnClickListener {
-            val username = usernameEditText.text.toString().trim()
             val email = emailEditText.text.toString().trim()
             val password = passwordEditText.text.toString().trim()
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
-                auth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener { task ->
-                        if (task.isSuccessful) {
-                            // Registration successful
-                            Toast.makeText(context, "Registration successful", Toast.LENGTH_SHORT).show()
-                            (activity as MainActivity).replaceFragment(LoginFragment())
-                        } else {
-                            // Registration failed
-                            Toast.makeText(context, "Registration failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
-                        }
+                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(context, "Registration successful", Toast.LENGTH_SHORT).show()
+                        (activity as MainActivity).replaceFragment(LoginFragment())
+                    } else {
+                        Toast.makeText(context, "Registration failed: ${task.exception?.message}", Toast.LENGTH_SHORT).show()
                     }
+                }
             } else {
                 Toast.makeText(context, "Please fill all fields", Toast.LENGTH_SHORT).show()
             }
         }
 
-        // Go to Login
         goToLoginButton.setOnClickListener {
             (activity as MainActivity).replaceFragment(LoginFragment())
         }
-
         return view
-    }
-
-    companion object {
-        @JvmStatic
-        fun newInstance() = SignUpFragment()
     }
 }

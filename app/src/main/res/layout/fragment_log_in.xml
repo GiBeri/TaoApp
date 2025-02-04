@@ -9,7 +9,7 @@
     android:gravity="center"
     android:padding="20dp"
     android:id="@+id/logIn"
-    tools:context=".LogInFragment">
+    tools:context=".LoginFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
